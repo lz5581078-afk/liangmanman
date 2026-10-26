@@ -1,0 +1,83 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: liangmanman
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/liangmanman?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:}
+  sql:
+    init:
+      mode: never   # 生产库用 schema.sql 手动初始化；开发环境见 application-dev.yml
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+
+app:
+  # 对外访问的基础地址，上传图片的 URL 会以它开头
+  public-base-url: ${PUBLIC_BASE_URL:http://127.0.0.1:8080}
+  upload-dir: ${UPLOAD_DIR:./uploads}
+  # 开户证件照等私密文件，不对外提供访问
+  private-dir: ${PRIVATE_DIR:./private}
+  jwt-secret: ${JWT_SECRET:change-me-in-production-at-least-32-chars}
+  jwt-days: 30
+  store:
+    auto-approve: false     # 生产：店铺需运营审核
+  order:
+    pay-timeout-minutes: 15
+    accept-timeout-minutes: 30
+    remind-after-minutes: 10        # 多少分钟没接单再打电话催一次
+    auto-confirm-hours: 24          # 送达后自动确认收货
+    express-auto-confirm-days: 10   # 快递发货后自动确认收货
+  search:
+    default-radius-km: 30
+  wx:
+    mock: false
+    app-id: ${WX_APP_ID:}
+    app-secret: ${WX_APP_SECRET:}
+    subscribe-order-template: ${WX_TPL_ORDER:}
+    subscribe-merchant-template: ${WX_TPL_MERCHANT:}
+  pay:
+    mock: false
+    wechat:
+      sp-mch-id: ${WXPAY_MCH_ID:}
+      api-v3-key: ${WXPAY_API_V3_KEY:}
+      private-key-path: ${WXPAY_PRIVATE_KEY_PATH:}
+      merchant-serial-number: ${WXPAY_SERIAL:}
+      public-key-id: ${WXPAY_PUBLIC_KEY_ID:}
+      public-key-path: ${WXPAY_PUBLIC_KEY_PATH:}
+      notify-base-url: ${WXPAY_NOTIFY_BASE_URL:${PUBLIC_BASE_URL:http://127.0.0.1:8080}}
+  tencent:
+    secret-id: ${TENCENT_SECRET_ID:}
+    secret-key: ${TENCENT_SECRET_KEY:}
+    region: ap-guangzhou
+    ocr-mock: false
+  notification:
+    mock: false
+    sms-sdk-app-id: ${SMS_SDK_APP_ID:}
+    sms-sign: ${SMS_SIGN:粮满满}
+    sms-template-new-order: ${SMS_TPL_NEW_ORDER:}
+    sms-template-buyer: ${SMS_TPL_BUYER:}
+    voice-sdk-app-id: ${VOICE_SDK_APP_ID:}
+    voice-template-new-order: ${VOICE_TPL_NEW_ORDER:}
+    buyer-sms-fallback: false       # 买家订阅消息发不出去时是否改发短信（短信按条收费）
+  admin:
+    init-username: ${ADMIN_INIT_USERNAME:admin}
+    init-password: ${ADMIN_INIT_PASSWORD:}   # 为空时不自动创建管理员

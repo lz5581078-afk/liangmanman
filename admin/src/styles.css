@@ -1,0 +1,91 @@
+:root {
+  --lm-brand: #2f7d32;
+  --lm-bg: #f3f5f2;
+  --el-color-primary: #2f7d32;
+  --el-color-primary-light-3: #6da470;
+  --el-color-primary-light-5: #97be98;
+  --el-color-primary-light-7: #c1d8c1;
+  --el-color-primary-light-8: #d5e5d6;
+  --el-color-primary-light-9: #eaf2ea;
+  --el-color-primary-dark-2: #266428;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--el-text-color-primary);
+  background: var(--lm-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 页面卡片 */
+.page-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.page-card + .page-card {
+  margin-top: 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: var(--el-text-color-secondary);
+  font-size: 12px;
+}
+
+.money {
+  font-variant-numeric: tabular-nums;
+}
+
+.cell-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cell-main .cell-text {
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawer-section + .drawer-section {
+  margin-top: 20px;
+}
+
+.drawer-section h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.img-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

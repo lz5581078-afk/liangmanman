@@ -1,0 +1,17 @@
+# 正式环境：所有密钥通过环境变量传入（见 README「上线配置」）
+app:
+  store:
+    auto-approve: false
+  wx:
+    mock: false
+  pay:
+    mock: false        # 配了 WXPAY_MCH_ID 就走收付通；没配则在线支付关闭、只能货到付款
+  tencent:
+    ocr-mock: false
+  notification:
+    mock: false
+
+logging:
+  level:
+    root: info
+    com.liangmanman: info

@@ -1,0 +1,45 @@
+{
+  "name": "粮满满",
+  "appid": "",
+  "description": "附近的农资店，送货到村",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "vueVersion": "3",
+  "locale": "zh-Hans",
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true,
+    "permission": {
+      "scope.userLocation": {
+        "desc": "用于找到你附近的农资店，计算送货距离"
+      }
+    },
+    "requiredPrivateInfos": ["getLocation", "chooseLocation"]
+  },
+  "app-plus": {
+    "distribute": {
+      "android": {
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>"
+        ]
+      },
+      "ios": {
+        "privacyDescription": {
+          "NSLocationWhenInUseUsageDescription": "用于找到你附近的农资店，计算送货距离",
+          "NSCameraUsageDescription": "用于拍商品照片、扫码找货",
+          "NSPhotoLibraryUsageDescription": "用于选择商品照片"
+        }
+      }
+    }
+  },
+  "h5": {
+    "title": "粮满满",
+    "router": { "mode": "hash" }
+  }
+}

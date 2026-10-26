@@ -1,0 +1,54 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "粮满满", "enablePullDownRefresh": true } },
+    { "path": "pages/search/search", "style": { "navigationBarTitleText": "找货" } },
+    { "path": "pages/store/store", "style": { "navigationBarTitleText": "店铺" } },
+    { "path": "pages/product/product", "style": { "navigationBarTitleText": "商品" } },
+    { "path": "pages/sku/compare", "style": { "navigationBarTitleText": "同款比价" } },
+    { "path": "pages/checkout/checkout", "style": { "navigationBarTitleText": "确认订单" } },
+    { "path": "pages/order/list", "style": { "navigationBarTitleText": "我的订单", "enablePullDownRefresh": true } },
+    { "path": "pages/order/detail", "style": { "navigationBarTitleText": "订单详情" } },
+    { "path": "pages/address/list", "style": { "navigationBarTitleText": "收货地址" } },
+    { "path": "pages/address/edit", "style": { "navigationBarTitleText": "编辑地址" } },
+    { "path": "pages/mine/mine", "style": { "navigationBarTitleText": "我的" } },
+    { "path": "pages/merchant/home", "style": { "navigationBarTitleText": "我的店", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/product-edit", "style": { "navigationBarTitleText": "发商品" } },
+    { "path": "pages/merchant/products", "style": { "navigationBarTitleText": "商品管理" } },
+    { "path": "pages/merchant/orders", "style": { "navigationBarTitleText": "订单", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/delivery-sheet", "style": { "navigationBarTitleText": "送货清单" } },
+    { "path": "pages/merchant/settings", "style": { "navigationBarTitleText": "店铺设置" } },
+    { "path": "pages/group/detail", "style": { "navigationBarTitleText": "一起凑单", "enablePullDownRefresh": true } },
+    { "path": "pages/store/reviews", "style": { "navigationBarTitleText": "店铺评价", "enablePullDownRefresh": true } },
+    { "path": "pages/review/edit", "style": { "navigationBarTitleText": "评价" } },
+    { "path": "pages/wanted/create", "style": { "navigationBarTitleText": "发求购" } },
+    { "path": "pages/wanted/mine", "style": { "navigationBarTitleText": "我的求购", "enablePullDownRefresh": true } },
+    { "path": "pages/poster/poster", "style": { "navigationBarTitleText": "海报" } },
+    { "path": "pages/merchant/group-buys", "style": { "navigationBarTitleText": "凑单", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/group-buy-edit", "style": { "navigationBarTitleText": "开凑单" } },
+    { "path": "pages/merchant/wanted", "style": { "navigationBarTitleText": "附近求购", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/reviews", "style": { "navigationBarTitleText": "评价", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/onboarding", "style": { "navigationBarTitleText": "收款账户" } },
+    { "path": "pages/merchant/wallet", "style": { "navigationBarTitleText": "钱包", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/credit", "style": { "navigationBarTitleText": "赊账本", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/credit-detail", "style": { "navigationBarTitleText": "赊账明细", "enablePullDownRefresh": true } },
+    { "path": "pages/merchant/licenses", "style": { "navigationBarTitleText": "证件" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "粮满满",
+    "navigationBarBackgroundColor": "#F7F5EF",
+    "backgroundColor": "#F7F5EF"
+  },
+  "tabBar": {
+    "color": "#7A7468",
+    "selectedColor": "#2E6B30",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "fontSize": "15px",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "附近" },
+      { "pagePath": "pages/order/list", "text": "订单" },
+      { "pagePath": "pages/mine/mine", "text": "我的" }
+    ]
+  }
+}

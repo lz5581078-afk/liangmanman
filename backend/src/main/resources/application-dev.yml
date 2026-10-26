@@ -1,0 +1,26 @@
+# 本地开发：微信登录、支付、通知、OCR 都用模拟实现，不需要任何真实账号
+spring:
+  sql:
+    init:
+      mode: ${DB_INIT:never}   # 首次启动传 DB_INIT=always 自动建表并写入初始数据
+      encoding: UTF-8
+      schema-locations: classpath:db/schema.sql
+      data-locations: classpath:db/seed.sql
+
+app:
+  store:
+    auto-approve: true
+  wx:
+    mock: true
+  pay:
+    mock: true
+  tencent:
+    ocr-mock: true
+  notification:
+    mock: true
+  admin:
+    init-password: ${ADMIN_INIT_PASSWORD:admin123}   # 开发环境默认管理员 admin / admin123
+
+logging:
+  level:
+    com.liangmanman: debug
